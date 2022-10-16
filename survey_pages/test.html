@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>MainPage</title>
+    <script type="text/javascript">
+        function Reset() 
+        {
+            if (document.all.resultFrame)
+                alert("resultFrame found");
+            else
+                alert("resultFrame NOT found");
+
+                if (typeof (window.frames[0].Reset) == "function")
+                    window.frames[0].Reset();
+                else
+                    alert("resultFrame.Reset NOT found");
+        }
+    </script>
+</head>
+<body>
+    MainPage<br>
+    <input type="button" onclick="Reset()" value="Reset"><br><br>
+    <iframe height="100" id="resultFrame" src="hidden_collage_page.html"></iframe>
+</body>
+</html>
