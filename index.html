@@ -29,8 +29,16 @@
             This page intentionally left blank
         </div>
     </div>
+
 </body>
 
+<div id="main_page">
+
+</div>
+
+<button id="next_button">Next Page</button>
+
+<button id="next_button">Previous Page</button>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
@@ -41,3 +49,73 @@
 </script>
 
 </html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+
+<input hidden id="current_page_number" value="1">
+
+<script>
+
+var results = {}
+
+var page_num_to_link = {
+    "1":"survey_pages/SelectNation.html",
+    "2":"survey_pages/FirstInstruction.html"
+}
+
+var page_num_to_save_function = {
+    "1":save_data_demophraics,
+    "2":save_data_select_nation
+}
+
+function save_data_demophraics(){
+    results["SelectNation"] = {}
+    results["SelectNation"]["field1"] = $("#some_element").va()
+    results["SelectNation"]["field2"] = $("#some_element2").va()
+}
+
+function save_data_select_nation(){
+    
+}
+
+$(document).ready(function(){
+   
+    $( "#main_page" ).load( "survey_pages/SelectNation.html" );
+
+});
+
+$("#next_button").click(function(){
+
+    if ($("#current_page_number").val() == "survey_pages/SelectNation.html"){
+        save_data_select_nation()
+    } else if ($("#current_page_number").val() == "survey_pages/FirstInstruction.html"){
+        save_data_demophraics()
+    }
+
+    // page_num_to_save_function[$("#current_page_number").val()]()
+    $("#current_page_number").val() = $("#current_page_number").val() + 1
+    $( "#main_page" ).load( page_num_to_link[ $("#current_page_number").val() ] );
+    
+})
+
+$("#next_button").click(function(){
+    page_num_to_save_function[$("#current_page_number").val()]()
+    $("#current_page_number").val() = $("#current_page_number").val() - 1
+    $( "#main_page" ).load( page_num_to_link[ $("#current_page_number").val() ] );
+})
+
+$("#search_for_images").click(function() {
+
+    if ($("#hidden").val() == "1"){
+        results['norway'] = $("#norway_familiarity").val();
+    } else if ($("#hidden").val() == "2") {
+        results['demographic_filed_1'] = $("#norway_familiarity").val()
+        results['demographic_filed_1'] = $("#norway_familiarity").val()
+        results['demographic_filed_1'] = $("#norway_familiarity").val()
+        results['demographic_filed_1'] = $("#norway_familiarity").val()
+    }
+
+    
+})
+
+</script>
