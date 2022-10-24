@@ -1,1 +1,229 @@
-<a href="../index.html" >Return Home</a>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</head>
+
+<div id="navbar_header">
+    Your imagination about foods
+</div>
+
+<div id="full_page">
+    <h1>Collage Creation Instructions</h1>
+<div id="main_page">
+    <div id="left_section">
+
+        <div id="row1">
+            <div class="box">
+                
+                <div class="top_section">
+                    <div class="number_circle">1</div>
+                </div>
+                <div class="text_box">
+                    <p>Search for images to add to collage.</p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="top_section">
+                    <div class="number_circle">2</div>
+                </div>
+
+                <div class="text_box">
+                    <div id="special_instruction_wrapper">
+                        <div class="special_spacing_div">
+                            <p>Click on the images tab</p>
+                            <p>Choose an image that you associate with Scandinavian food</p>
+                            <p>Right click on that image and copy the image address</p>
+                        </div>
+                        <div class="special_spacing_div" id="special_spacing_div_for_img">
+                            <img id="example_image" src="../images/good_picture_example.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="row2">
+            <div class="box">
+                <div class="top_section">
+                    <div class="number_circle">3</div>
+                </div>
+                <div class="text_box">
+                    <p>Past the image address in the search bar and push "Add Image"</p>
+                </div>
+            </div>
+            <div class="box">
+                
+                <div class="top_section">
+                    <div class="number_circle">5</div>
+                </div>
+                <div class="text_box">
+                    <p>Position the picture in a way you consider appealing</p>
+
+                    <p>Click on the current tool box to change the tool you wish to use for positioning the image.</p>
+                    
+                </div>
+            </div>
+        </div>
+                
+
+    </div>
+    <div id="right_section">
+        <img id="collage_instruction" src="../images/collage_instructions.png">
+    </div>
+</div>
+<div id="fooder_container">
+    <button type="button" class="btn btn-primary" id="next_button">I Understand The Instructions</button>
+
+    <progress id="pgoress_bar" value="32" max="100"> 32% </progress>
+</div>
+</div>
+
+
+
+
+<style>
+
+#fooder_container{
+    height: 150px;
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#next_button{
+    width: 40%;
+}
+
+#pgoress_bar{
+    margin: 20px;
+    width: 900px;
+    color: lightslategray
+}
+
+#navbar_header{
+    width: 100%;
+    background-color:rgb(94, 94, 94);
+    display: flex;
+    justify-content: center;
+}
+
+#full_page{
+    width: 100%;
+    height: 900px;
+    display:flex;
+    flex-direction: column;
+}
+
+#main_page{
+    width: 100%;
+    display:flex;
+    flex-direction: row;
+}
+
+#left_section{
+    width: 50%;
+    height: 750px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    row-gap: 20px;
+}
+
+#right_section{
+    width: 50%;
+    height: 750px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+#row1{
+    width: 100%;
+    height: 900px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+
+#row2{
+    width: 100%;
+    height: 600px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+
+.box{
+    height: 100%;
+    width: 45%;
+
+}
+
+.number_circle{
+    border-radius: 100%;
+    background-color: blue;
+    width: 40px;
+    height: 40px;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.top_section{
+    height: 40px;
+    width: 100%;
+}
+
+.text_box{
+    padding-top:20px;
+    width: 100%;
+    height: 90%;
+}
+
+p{
+    font-size: larger;
+}
+
+#special_instruction_wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: space-between;
+    height: 100%;
+}
+
+#example_image{
+    width: 60%;
+}
+
+.special_spacing_div{
+    width: 100%;
+}
+
+#special_spacing_div_for_img{
+    display: flex;
+    justify-content: space-around;
+}
+
+#collage_instruction{
+    width: 100%;
+}
+
+</style>

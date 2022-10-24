@@ -1,33 +1,232 @@
-
 <head>
+    <!-- Include Stylesheet -->
+    <link rel="stylesheet" href="style.css"></link>
 
     <!-- Include JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
+    <!-- Include JavaScript -->
+    <script src="script.js"></script>
 
     <!-- Title of Page -->
     <title>Image Mosaic Maker</title>
+
+    <!-- Include JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!-- Title of Page -->
+    <title>Image Mosaic Maker</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
-    <div class="toolbar">
-    Current Tool: 
-        <select id="toolchooser">
-            <option>Move</option>
-            <option>Resize</option>
-            <option>Rotate</option>
-            <option>Bring to Front</option>
-            <option>Delete</option>
-        </select><br/>
-        Drag in any image from your computer to add it to the collage
-    </div>
-    <img src="https://avatars3.githubusercontent.com/u/9167554?s=460&v=4" draggable=false />
+<h1>Create A Collage That Best Describes Norweigen Food</h1>
+<div id="main_container">
+        <div id="left-container">
+            <div class="toolbar">
+            Current Tool: 
+                <select id="toolchooser">
+                    <option>Move</option>
+                    <option>Resize</option>
+                    <option>Rotate</option>
+                    <option>Bring to Front</option>
+                    <option>Delete</option>
+                </select><br/>
+                Drag in any image from your computer to add it to the collage
+            </div>
 
+            <div id="image_dump_location"></div>
+
+            </div>
+
+<div id="right-container">
+
+    <div id="img_picker_header">
+        <h2>Search for images to add to collage.</h2>
+        <div class="custom_form_input">
+            <input type="text" id="search_input_box" class="form-control custom_input" placeholder="Search Key Word" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <button id="search_for_images" class="btn btn-outline-secondary custom_form_button" type="button">Search</button>
+        </div>
+    </div>
+
+    <div id="image_container">
+    <iframe src="google.php?q=denmark" id='test_frame'></iframe>
+    </div>
+
+    <div id="footer_container">
+        <h2>Past image address to add new images.</h2>
+        <div class="custom_form_input">
+            <input type="text" id="add_image_form" class="form-control custom_input" placeholder="Image Address" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <button class="btn btn-outline-secondary custom_form_button" type="button" id="add_image_btn">Add Image</button>
+        </div>
+    </div>
+</div>
+</div>
+    <div id="footer">
+    <button type="button" class="btn btn-primary" id="next_button">Submit Collage</button>
+    <progress id="pgoress_bar" value="60" max="100"> 60% </progress>
+
+    </div>
 </body>
 
 
+<style>
+
+#pgoress_bar{
+    margin: 10px;
+    width: 900px;
+}
+
+#next_button{
+    width: 900px;
+}
+
+img
+{
+    position: absolute;
+}
+.toolbar
+{
+    position: relative;
+    height: 100px;
+    width: 100%;
+    text-align: center;
+}
+body
+{
+    font-family: Helvetica, Arial, sans-serif;
+    margin:12px;
+}
+
+#left-container{
+    width: 50%;
+    height: 100%;
+    background-color:lightgray;
+    border-style: solid;
+    border-width: 5px;
+    margin-right:10px;
+
+}
+
+#right-container{
+    width: 50%;
+    height: 100%;
+    z-index: 100000;
+    background-color: lightgray;
+    border-style: solid;
+    border-width: 5px;
+    margin-right:10px;
+    padding:10px;
+}
+
+#main_container{
+    width: 100%;
+    height: 85%;
+    display: flex;
+    flex-direction: row;
+}
+
+.img_box{
+    margin:5px;
+    padding: 10px;
+    width: 200px;
+    height: 200px;
+    
+}
+
+#img_picker_header{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items:center;
+    background-color:lightslategray;
+    display: flex;
+    flex-direction: column;
+}
+
+#image_container{
+    width: 100%;
+    height: 75%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+
+#footer_container{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+    background-color:lightslategray;
+}
+
+.custom_form_input{
+  width: 100%;
+  height: 40%;
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+
+}
+
+.custom_input{
+  width: 40%;
+}
+
+.custom_form_button{
+  width: 15%;
+}
+
+
+#test_frame{
+    width: 100%;
+    height: 100%;
+}
+
+#footer{
+    margin-top:10px;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+
+}
+
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+
+
 <script>
-    // this variable will hold whichever object is currently being dragged
+
+
+$("#search_for_images").click(function() {
+    var test = $("#search_input_box").val()
+    $("#test_frame").attr('src', "google.php?q="+test)
+})
+
+$("#add_image_btn").click(function(){
+  var text_input = $("#add_image_form").val()
+  droppedImage(text_input);
+//   alert(text_input);
+})
+
+// this variable will hold whichever object is currently being dragged
 var currentlyDragging;
 
 // this variable holds the curent mode (0=move, 1=resize, 2=rotate)
@@ -175,7 +374,20 @@ if(window.FileReader) {
   document.getElementById('status').innerHTML = 'Your browser does not support the HTML5 FileReader.';
 }
 
-function droppedImage(e)
+function droppedImage(src_link)
+{
+    var img = document.createElement("img");
+    img.src = src_link
+    var dump_location = document.getElementById("image_dump_location");
+    dump_location.appendChild(img);
+    $(img).attr("draggable", "false");
+    $(img).mousedown(startDragging);
+
+    
+
+}
+
+function test_add()
 {
     e.preventDefault();
     var dt    = e.dataTransfer;
@@ -216,38 +428,4 @@ Function.prototype.bindToEventHandler = function bindToEventHandler() {
       handler.apply(this, boundParameters);
   }
 };
-
-function Reset() {
-    alert("Hi");
-}
-
-
 </script>
-
-
-<style>
-    img
-{
-    height: 250px;
-    position: absolute;
-    padding: 15px;
-    padding-bottom: 50px;
-    box-shadow: 0px 0px 20px #888888;
-    border: 1px solid gray;
-    background-color: white;
-}
-
-.toolbar
-{
-    position: fixed;
-    height: 100px;
-    width: 100%;
-    text-align: center;
-}
-
-body
-{
-    font-family: Helvetica, Arial, sans-serif;
-}
-
-</style>
